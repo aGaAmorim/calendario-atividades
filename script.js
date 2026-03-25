@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetch("https://script.google.com/macros/s/AKfycbxmH698UASs2RycR6vA8Y9ssqHFh1sPK8c73cW3c9MJfafu87h8sZEuqdDedIIdtJbRgw/exec", {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify({
         atividade: atividadeInput.value,
         nome: form.querySelector('input[placeholder="Nome"]').value,
