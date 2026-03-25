@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
+  var formulario = document.getElementById('formulario');
+  var atividadeInput = document.getElementById('atividadeNome');
+  var dataInput = document.getElementById('dataInput');
+  var cancelarBtn = document.getElementById('cancelar');
+
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
 
@@ -17,31 +22,38 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       {
         title: 'Prova de Matemática',
-        date: '2026-03-30'
+        date: '2026-03-28'
       }
     ],
 
-    // clique no dia
-    dateClick: function(info) {
-      document.querySelector('#formulario input[type="date"]').value = info.dateStr;
-      document.getElementById('formulario').scrollIntoView();
-    },
-
-    // clique na atividade
+    // clicar na atividade
     eventClick: function(info) {
       info.jsEvent.preventDefault();
 
-      // mostra qual atividade foi clicada
-      alert("Atividade: " + info.event.title);
+      const confirmar = confirm("Deseja solicitar reprogramação para a atividade?");
 
-      // preenche a data no formulário
-      document.querySelector('#formulario input[type="date"]').value = info.event.startStr;
+      if (confirmar) {
+        // preenche os campos
+        atividadeInput.value = info.event.title;
+        dataInput.value = info.event.startStr;
 
-      // rola até o formulário
-      document.getElementById('formulario').scrollIntoView();
+        // mostra formulário
+        formulario.style.display = 'block';
+
+        // rola até ele
+        formulario.scrollIntoView();
+      }
     }
-
   });
 
   calendar.render();
+
+  // botão cancelar
+  cancelarBtn.addEventListener('click', function() {
+    formulario.style.display = 'none';
+
+    // limpa os campos
+    atividadeInput.value = '';
+    dataInput.value = '';
+  });
 });
