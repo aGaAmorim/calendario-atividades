@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
     locale: 'pt-br',
 
     events: [
-      { title: 'Trabalho de História', date: '2026-03-28', color: 'red' },
-      { title: 'Trabalho de Inglês', date: '2026-03-28', color: 'yellow' },
-      { title: 'Prova de Matemática', date: '2026-03-31', color: 'orange' }
+      { title: 'Controladoria', date: '2026-03-28', color: 'red' },
+      { title: 'Apresentação', date: '2026-03-28', color: 'green' },
+      { title: 'Fechamento', date: '2026-03-31', color: 'red' }
     ],
 
     eventClick: function(info) {
