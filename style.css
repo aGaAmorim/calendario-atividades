@@ -11,3 +11,14 @@ body {
 #formulario {
   margin-top: 40px;
 }
+
+#formRemarcacao input,
+#formRemarcacao textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+#formRemarcacao button {
+  padding: 10px;
+  cursor: pointer;
+}
