@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var formulario = document.getElementById('formulario');
   var atividadeInput = document.getElementById('atividadeNome');
+  var dataOriginalInput = document.getElementById('dataOriginal');
   var dataInput = document.getElementById('dataInput');
   var cancelarBtn = document.getElementById('cancelar');
   const form = document.getElementById('formRemarcacao'); 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (confirmar) {
         atividadeInput.value = info.event.title;
+        dataOriginalInput.value = info.event.startStr;
         dataInput.value = info.event.startStr;
 
         formulario.style.display = 'block';
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       mode: "no-cors",
       body: JSON.stringify({
         atividade: atividadeInput.value,
+        dataOriginal: document.getElementById('dataOriginal').value,
         nome: form.querySelector('input[placeholder="Nome"]').value,
         data: dataInput.value,
         motivo: form.querySelector('textarea').value
