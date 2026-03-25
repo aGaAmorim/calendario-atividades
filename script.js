@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
+  const botaoEnviar = form.querySelector('button[type="submit"]');
+
+  // desabilita botão
+  botaoEnviar.disabled = true;
+  botaoEnviar.innerText = "Enviando...";
+
     fetch("https://script.google.com/macros/s/AKfycbxmH698UASs2RycR6vA8Y9ssqHFh1sPK8c73cW3c9MJfafu87h8sZEuqdDedIIdtJbRgw/exec", {
       method: "POST",
       mode: "no-cors",
@@ -67,7 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(() => {
       alert("Erro ao enviar 😢");
-    });
+    })
+    .finally(() => {
+    // reativa botão
+    botaoEnviar.disabled = false;
+    botaoEnviar.innerText = "Enviar";
+  });
   });
 
 });
