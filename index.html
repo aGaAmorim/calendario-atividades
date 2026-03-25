@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendário de Atividades</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>📅 Calendário de Atividades</h1>
+
+  <div id="calendar"></div>
+
+  <!-- Formulário de remarcação -->
+  <div id="formulario">
+    <h2>Remarcar atividade</h2>
+    <form id="formRemarcacao">
+      <input type="text" placeholder="Nome" required>
+      <input type="date" required>
+      <textarea placeholder="Motivo"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
