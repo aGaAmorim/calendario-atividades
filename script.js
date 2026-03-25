@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
     eventClick: function(info) {
       info.jsEvent.preventDefault();
 
-      const confirmar = confirm("Deseja solicitar reprogramação para a atividade?");
+      //const confirmar = confirm("Deseja solicitar reprogramação para a atividade?");
+      const confirmar = confirm("Deseja solicitar reprogramação para a atividade:\n\n" + info.event.title + "?");
 
       if (confirmar) {
         // preenche os campos
