@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     events: [
       {
         title: 'Trabalho de História',
+        date: '2026-03-28',
+        title: 'Trabalho de Inglês',
         date: '2026-03-28'
       },
       {
