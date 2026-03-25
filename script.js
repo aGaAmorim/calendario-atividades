@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     events: [
       { title: 'Trabalho de História', date: '2026-03-28', color: 'red' },
       { title: 'Trabalho de Inglês', date: '2026-03-28', color: 'yellow' },
-      { title: 'Prova de Matemática', date: '2026-03-31', color: 'black' }
+      { title: 'Prova de Matemática', date: '2026-03-31', color: 'orange' }
     ],
 
     eventClick: function(info) {
