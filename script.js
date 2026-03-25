@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         failureCallback(error);
       });
   
-  }
+  },
 
     eventClick: function(info) {
       info.jsEvent.preventDefault();
