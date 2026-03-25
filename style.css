@@ -14,16 +14,33 @@ body {
 
 #formRemarcacao {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
+  max-width: 600px;
 }
 
-.linha-motivo textarea {
+/* atividade, nome e data na mesma linha */
+#formRemarcacao input[type="text"],
+#formRemarcacao input[type="date"] {
+  flex: 1;
+  min-width: 150px;
+}
+
+#formRemarcacao textarea {
   width: 100%;
   min-height: 100px;
 }
 
-#formRemarcacao button {
+/* container dos botões */
+.botoes {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* botões lado a lado */
+.botoes button {
+  flex: 1;
   padding: 10px;
   cursor: pointer;
 }
