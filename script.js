@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
     events: function(fetchInfo, successCallback, failureCallback) {
 
     fetch("https://script.google.com/macros/s/AKfycbyLKuGN1mroryIepBzZ4ecOI_LtpKCJvFSumeNsNsmBQW5B6zcwWanoqvmmHUnRmMNa/exec")
-      .then(response => response.json())
-      .then(data => {
+      .then(response => response.text())
+      .then(text => {
+        const data = JSON.parse(text);
         successCallback(data);
       })
       .catch(error => {
