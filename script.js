@@ -12,11 +12,26 @@ document.addEventListener('DOMContentLoaded', function () {
     initialView: 'dayGridMonth',
     locale: 'pt-br',
 
+    /*
     events: [
       { title: 'Controladoria', date: '2026-03-28', color: 'red' },
       { title: 'Apresentação', date: '2026-03-28', color: 'green' },
       { title: 'Fechamento', date: '2026-03-31', color: 'red' }
-    ],
+    ],*/
+
+    events: function(fetchInfo, successCallback, failureCallback) {
+
+    fetch("https://script.google.com/macros/s/AKfycbyLKuGN1mroryIepBzZ4ecOI_LtpKCJvFSumeNsNsmBQW5B6zcwWanoqvmmHUnRmMNa/exec")
+      .then(response => response.json())
+      .then(data => {
+        successCallback(data);
+      })
+      .catch(error => {
+        console.error(error);
+        failureCallback(error);
+      });
+  
+  }
 
     eventClick: function(info) {
       info.jsEvent.preventDefault();
