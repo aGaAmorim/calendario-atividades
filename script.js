@@ -60,3 +60,28 @@ document.addEventListener('DOMContentLoaded', function () {
     dataInput.value = '';
   });
 });
+
+const form = document.getElementById('formRemarcacao');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbxmH698UASs2RycR6vA8Y9ssqHFh1sPK8c73cW3c9MJfafu87h8sZEuqdDedIIdtJbRgw/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      atividade: document.getElementById('atividadeNome').value,
+      nome: form.querySelector('input[placeholder="Nome"]').value,
+      data: document.getElementById('dataInput').value,
+      motivo: form.querySelector('textarea').value
+    })
+  })
+  .then(() => {
+    alert("Solicitação enviada com sucesso! ✅");
+
+    form.reset();
+    document.getElementById('formulario').style.display = 'none';
+  })
+  .catch(() => {
+    alert("Erro ao enviar 😢");
+  });
+});
