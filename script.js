@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       {
         title: 'Prova de Matemática',
-        date: '2026-03-28'
+        date: '2026-03-31',
+        color: 'green'
       }
     ],
 
