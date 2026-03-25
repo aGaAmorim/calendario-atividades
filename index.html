@@ -19,10 +19,14 @@
   <div id="formulario">
     <h2> Solicitar reprogramação </h2>
     <form id="formRemarcacao">
+      <input type="text" id="atividadeNome" placeholder="Atividade" readonly>
+      
       <input type="text" placeholder="Nome" required>
-      <input type="date" required>
+      <input type="date" id="dataInput" required>
       <textarea placeholder="Motivo"></textarea>
+      
       <button type="submit">Enviar</button>
+      <button type="button" id="cancelar">Cancelar</button>
     </form>
   </div>
 
