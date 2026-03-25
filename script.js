@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var formulario = document.getElementById('formulario');
   var atividadeInput = document.getElementById('atividadeNome');
   var dataOriginalInput = document.getElementById('dataOriginal');
-  var dataInput = document.getElementById('dataInput');
+  var novaDataInput = document.getElementById('novaData');
   var cancelarBtn = document.getElementById('cancelar');
   const form = document.getElementById('formRemarcacao'); 
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (confirmar) {
         atividadeInput.value = info.event.title;
         dataOriginalInput.value = info.event.startStr;
-        dataInput.value = info.event.startStr;
+        novaDataInput.value = "";
 
         formulario.style.display = 'block';
         formulario.scrollIntoView();
@@ -37,10 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
   calendar.render();
 
   cancelarBtn.addEventListener('click', function() {
-    formulario.style.display = 'none';
-    atividadeInput.value = '';
-    dataInput.value = '';
-  });
+  formulario.style.display = 'none';
+
+  atividadeInput.value = '';
+  dataOriginalInput.value = '';
+  novaDataInput.value = '';
+  document.getElementById('nome').value = '';
+  document.getElementById('motivo').value = '';
+});
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -50,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
       mode: "no-cors",
       body: JSON.stringify({
         atividade: atividadeInput.value,
-        dataOriginal: document.getElementById('dataOriginal').value,
-        nome: form.querySelector('input[placeholder="Nome"]').value,
-        data: dataInput.value,
-        motivo: form.querySelector('textarea').value
+        dataOriginal: dataOriginalInput.value,
+        nome: document.getElementById('nome').value,
+        novaData: novaDataInput.value,
+        motivo: document.getElementById('motivo').value
       })
     })
     .then(() => {
