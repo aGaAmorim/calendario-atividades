@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
       {
         title: 'Trabalho de Inglês',
         date: '2026-03-28',
-        color: 'pink'
+        color: 'yellow'
       },
       {
         title: 'Prova de Matemática',
